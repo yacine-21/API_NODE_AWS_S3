@@ -2,6 +2,7 @@ const AWS = require("aws-sdk");
 const express = require("express");
 const app = express();
 require("dotenv").config();
+const PORT = process.env.PORT;
 const s3 = new AWS.S3({
 	accessKeyId: process.env.ACCESS_KEY_ID,
 	secretAccessKey: process.env.SECRET_ACCESS_KEY
@@ -51,6 +52,6 @@ app.get("/get-all-images", (req, res) => {
 	res.send(images);
 });
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
 	console.log("Server started on port 3000");
 });
