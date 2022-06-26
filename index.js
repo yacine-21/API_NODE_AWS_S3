@@ -40,7 +40,6 @@ const listObjectFolder = async s3 => {
 const listObjectsInBucket = async bucketName => {
 	let bucketParams = {
 		Bucket: bucketName,
-		Prefix: "/Images"
 	};
 	s3.listObjects(bucketParams, function (err, data) {
 		try {
